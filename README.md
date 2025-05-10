@@ -127,8 +127,8 @@ MOVIE_EXPLORE/
 │   ├── context/
 │   │   └── AuthContext.js        # Authentication context
 │   ├── pages/
-│   │   ├── Favorites.js
-│   │   │                         # User favorites with remove button
+│   │   ├─
+│   │   │   └── Favorites.js      # User favorites with remove button
 │   │   ├── home/
 │   │   │   └── home.js           # Homepage with featured movies
 │   │   ├── login/
@@ -155,4 +155,59 @@ MOVIE_EXPLORE/
 ### 1. Movie Browsing and Details
 
 - **Homepage** (`home.js`): Curated movie lists using `movieList.js` and `Cards.js`.
-- **Movie Details** (`movie.js`): F
+- **Movie Details** (`movie.js`): Fetches movie data (title, poster, genres, synopsis) via TMDB API. Includes a "Home" button (`Link` to `/`) and IMDb link.
+- **Cards** (`Cards.js`): MUI-styled movie cards with skeleton loaders and favorite buttons (`#333333`).
+
+### 2. Search Functionality
+
+- **Search Page** (`SearchResults.js`): Search movies by title, displaying results in a card grid.
+
+### 3. Favorites System
+
+- **Add/Remove Favorites**:
+  - `Cards.js`: Toggle favorites on cards (`FavoriteIcon`/`FavoriteBorderIcon`, `#333333`).
+  - `movie.js`: Toggle favorites on details page (same styling).
+  - `Favorites.js`: Displays favorites with remove button (`#333333`).
+- **Storage**: Favorites stored in localStorage per `user.id` (`id`, `title`, `poster_path`, `release_date`, `vote_average`).
+- **Authentication**: Login required; redirects to `/login` if unauthenticated.
+
+### 4. User Authentication
+
+- **Login** (`Login.js`): User authentication via `AuthContext`.
+- **Signup** (`Signup.js`): User registration.
+- **Context** (`AuthContext.js`): Manages user state.
+
+### 5. Theme Support
+
+- **Light/Dark Toggle**: Via `header.js` and `App.js` with MUI `ThemeProvider`.
+- **Styling**: MUI components for responsive, theme-aware UI (`text.primary`, `background.paper`).
+
+### 6. UI/UX Enhancements
+
+- **Skeleton Loaders**: `react-loading-skeleton` in `Cards.js`.
+- **Responsive Design**: MUI props (`xs`, `sm`) in `Cards.js`, `Favorites.js`, `movie.js`.
+- **Consistent Favorites UI**: Dark `#333333` buttons across components.
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -m "Add your feature"`
+4. Push to branch: `git push origin feature/your-feature`
+5. Open a pull request.
+
+Ensure code follows ESLint rules and includes tests where applicable.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+For questions or feedback, open an issue on GitHub or contact [your-username].
+
+---
+
+Built with ❤️ using React and TMDB API.

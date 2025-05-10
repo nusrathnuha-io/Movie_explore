@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { 
   Container, 
@@ -39,15 +39,8 @@ const MovieList = () => {
 
   const currentType = type ? type : "popular";
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  useEffect(() => {
-    getData();
-  }, [type]);
-
-  const getData = () => {
+  // Use useCallback to memoize the getData function
+  const getData = useCallback(() => {
     setLoading(true);
     fetch(`https://api.themoviedb.org/3/movie/${currentType}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
       .then(res => {
@@ -64,7 +57,15 @@ const MovieList = () => {
         setError(err.message);
         setLoading(false);
       });
-  };
+  }, [currentType]); // Add currentType as a dependency
+
+  // Now we can safely add getData to the dependency arrays
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
+  // We don't need this second useEffect anymore as currentType changes will trigger getData via its dependency
+  // The above useEffect will run when getData changes, which happens when currentType changes
 
   if (error) {
     return (

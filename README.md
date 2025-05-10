@@ -188,26 +188,11 @@ MOVIE_EXPLORE/
 - **Responsive Design**: MUI props (`xs`, `sm`) in `Cards.js`, `Favorites.js`, `movie.js`.
 - **Consistent Favorites UI**: Dark `#333333` buttons across components.
 
-## Contributing
 
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m "Add your feature"`
-4. Push to branch: `git push origin feature/your-feature`
-5. Open a pull request.
-
-Ensure code follows ESLint rules and includes tests where applicable.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or feedback, open an issue on GitHub or contact [your-username].
-
+For questions or feedback, open an issue on GitHub or contact Nusrath Nuha
 ---
 
 Built with ❤️ using React and TMDB API.

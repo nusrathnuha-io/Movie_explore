@@ -127,8 +127,8 @@ MOVIE_EXPLORE/
 │   ├── context/
 │   │   └── AuthContext.js        # Authentication context
 │   ├── pages/
-│   │   ├── favorites/
-│   │   │   └── Favorites.js      # User favorites with remove button
+│   │   ├── Favorites.js
+│   │   │                         # User favorites with remove button
 │   │   ├── home/
 │   │   │   └── home.js           # Homepage with featured movies
 │   │   ├── login/
@@ -136,7 +136,7 @@ MOVIE_EXPLORE/
 │   │   ├── movieDetail/
 │   │   │   ├── movie.js          # Movie details with favorite, homepage buttons
 │   │   │   └── movie.css         # Custom styles for movie details
-│   │   ├── search/
+│   │   ├
 │   │   │   └── SearchResults.js  # Search results
 │   │   └── Signup.js             # User signup
 │   ├── App.js                    # Routing and theme provider
